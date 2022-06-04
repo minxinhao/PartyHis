@@ -87,12 +87,13 @@ void TestChoice(){
 }
 
 int main(){
-    // LoadTOF();
-    // TestTOF();
-    // LoadChoice("./SingleChoice.txt");
-    // printf("print A-D to choose single-choice for rignt answer\n");
-    // TestChoice();
-    // choices.clear();
+    LoadTOF();
+    TestTOF();
+    
+    LoadChoice("./SingleChoice.txt");
+    printf("print A-D to choose single-choice for rignt answer\n");
+    TestChoice();
+    choices.clear();
 
     LoadChoice("./MultipleChoice.txt");
     printf("print A-D to choose multiple-choice for rignt answer\n");
