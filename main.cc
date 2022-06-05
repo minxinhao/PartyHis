@@ -52,8 +52,7 @@ void LoadChoice(const char* file){
         if(line.substr(0,6)==std::string("答案"))flag=true;
         if(!flag){
             tmp.sentence+=line+"\n";
-        }
-        else{
+        }else{
             tmp.ans=line;
             choices.push_back(tmp);
             tmp.sentence.clear();
@@ -61,10 +60,10 @@ void LoadChoice(const char* file){
         }
     }
 
-    // for(auto iter = choices.begin();iter!=choices.end();iter++){
-    //     printf("%s",iter->sentence.c_str());
-    //     printf("Ans:%s\n",iter->ans.c_str());
-    // }
+    for(auto iter = choices.begin();iter!=choices.end();iter++){
+        printf("%s",iter->sentence.c_str());
+        printf("Ans:%s\n\n",iter->ans.c_str());
+    }
 }
 
 void TestTOF(){
@@ -73,7 +72,7 @@ void TestTOF(){
     for(auto iter = tofs.begin();iter!=tofs.end();iter++){
         printf("%s\n",iter->sentence.c_str());
         std::cin>>res;
-        printf("Ans:%s\n",iter->ans.c_str());
+        printf("Ans:%s\n\n",iter->ans.c_str());
     }
 }
 
@@ -82,20 +81,20 @@ void TestChoice(){
     for(auto iter = choices.begin();iter!=choices.end();iter++){
         printf("%s",iter->sentence.c_str());
         std::cin>>res;
-        printf("Ans:%s\n\n",iter->ans.c_str());
+        printf("Ans:%s\n",iter->ans.c_str());
     }
 }
 
 int main(){
-    LoadTOF();
-    TestTOF();
-    
+    // LoadTOF();
+    // TestTOF();
+
     LoadChoice("./SingleChoice.txt");
-    printf("print A-D to choose single-choice for rignt answer\n");
-    TestChoice();
+    // printf("print A-D to choose single-choice for rignt answer\n");
+    // TestChoice();
     choices.clear();
 
-    LoadChoice("./MultipleChoice.txt");
-    printf("print A-D to choose multiple-choice for rignt answer\n");
-    TestChoice();
+    // LoadChoice("./MultipleChoice.txt");
+    // printf("print A-D to choose multiple-choice for rignt answer\n");
+    // TestChoice();
 }
